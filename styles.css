@@ -1,111 +1,90 @@
-/* Reset básico */
-* {
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.site-header {
+  background-color: #c4122f;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+/* Ocultar menú hamburguesa por defecto */
+.menu-icon {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+.navbar ul {
+  display: flex;
+  gap: 15px;
+  list-style: none;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
-body {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  background-color: #f9f9f9;
-  color: #333;
-  line-height: 1.6;
-}
-
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* Header */
-header {
-  background-color: #1e1e1e;
-  color: #fff;
-  padding: 20px 0;
-}
-
-header h1 {
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-nav ul {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  list-style: none;
-  gap: 15px;
-}
-
-nav a {
-  color: #fff;
+.navbar a {
+  color: white;
   text-decoration: none;
-  padding: 8px 12px;
-  transition: background 0.3s;
+  font-weight: bold;
 }
 
-nav a:hover {
-  background-color: #333;
-  border-radius: 4px;
+.noticia {
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+  background-color: white;
 }
 
-/* Main */
-main {
-  background-color: #fff;
-  padding: 30px 0;
-}
-
-article h2 {
-  font-size: 2em;
-  margin-bottom: 10px;
-}
-
-.meta {
-  color: #888;
-  font-size: 0.9em;
-  margin-bottom: 20px;
-}
-
-article img {
+.noticia-img {
   width: 100%;
   height: auto;
   margin: 20px 0;
-  border-radius: 6px;
 }
 
-article p {
-  margin-bottom: 15px;
-}
-
-/* Footer */
 footer {
-  background-color: #1e1e1e;
-  color: #fff;
   text-align: center;
-  padding: 15px 0;
+  padding: 20px;
+  background-color: #eee;
   margin-top: 40px;
 }
 
 /* Responsivo */
 @media (max-width: 768px) {
-  nav ul {
+  .menu-icon {
+    display: block;
+  }
+
+  .navbar ul {
+    display: none;
     flex-direction: column;
-    align-items: center;
+    background-color: #c4122f;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
   }
 
-  article h2 {
-    font-size: 1.5em;
-  }
-}
-
-@media (max-width: 480px) {
-  nav a {
-    padding: 6px 10px;
-    font-size: 14px;
-  }
-
-  article h2 {
-    font-size: 1.2em;
+  .menu-toggle:checked + .menu-icon + .navbar ul {
+    display: flex;
   }
 }
